@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './FareList.css';
 import 'whatwg-fetch';
+import Fare from './Fare';
 
 class FareList extends Component {
 
@@ -24,9 +25,6 @@ class FareList extends Component {
             'usdTotalPrice': 'ASC'
           }
         ],
-        'travelClasses': [
-          'Economy'
-        ],
         'departure': {
           'start': '2017-08-18',
           'end': '2018-09-07'
@@ -38,7 +36,6 @@ class FareList extends Component {
         'outputFields': [
           'returnDate',
           'usdTotalPrice',
-          'popularity',
           'originCity',
           'destinationCity'
         ],
@@ -48,25 +45,12 @@ class FareList extends Component {
         'airlineCodes': [
           'ua'
         ],
-        'priceFormat': {
-          'decimalPlaces': 1,
-          'decimalSeparator': '.',
-          'thousandSeparator': '_'
-        },
         'datePattern': 'MMMM dd, yyyy',
         'languageCode': 'en',
         'faresPerRoute': 10,
-        'budget': {
-          'currencyCode': 'USD',
-          'maximum': 920,
-          'minimum': 0
-        },
         'routesLimit': 10,
         'flightType': 'rt',
-        'dataExpirationWindow': '50d',
-        'origins': [
-          'MIA'
-        ],
+        'dataExpirationWindow': '50d'
        })
     }).then(response => {
       return response.json()
@@ -89,14 +73,7 @@ class FareList extends Component {
     return (
     <div className="container">
       <div className="row">
-        <Fare 
-        originCity= {this.props.originCity}
-        destinationCity= {this.props.destinationCity}
-        price= {this.props.price}
-        departureDate= {this.props.departureDate}
-        returnDate= {this.props.returnDate}
-        callToAction= {this.props.callToAction}
-        />
+        <Fare listOfFares={this.state.fares} callToAction={this.props.callToAction} />
       </div>
     </div>
     );
@@ -111,27 +88,5 @@ FareList.defaultProps = {
   returnDate: "12/12/2017",
   callToAction: "Book now"
 }
-
-const Fare = (props) => {
-  return (
-    <div className="col s12 m6">
-      <div className="card blue-grey darken-1">
-        <div className="card-content white-text">
-          <span className="card-title">
-            {props.originCity} to {props.destinationCity} from {props.price}
-          </span>
-          <p>Leaving {props.departureDate}</p>
-          <p>Returning {props.returnDate}</p>
-        </div>
-        <div className="card-action">
-          <button className="btn waves-effect waves-light">
-            {props.callToAction}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 
 export default FareList;
