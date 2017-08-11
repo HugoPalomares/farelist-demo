@@ -1,0 +1,9 @@
+.btn-link {
+    color: #ffab40;
+    margin-right: 24px;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+}

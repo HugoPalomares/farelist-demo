@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import FareList from './FareList';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let baseUrl = 'https://openair.airtrfx.com/airfare-sputnik/fares';
+
+ReactDOM.render(<FareList baseUrl={baseUrl} />, document.getElementById('root'));
 registerServiceWorker();
