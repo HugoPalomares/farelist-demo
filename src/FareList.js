@@ -47,35 +47,31 @@ class FareList extends Component {
         ],
         'datePattern': 'MMMM dd, yyyy',
         'languageCode': 'en',
-        'faresPerRoute': 10,
-        'routesLimit': 10,
+        'faresPerRoute': 1,
+        'routesLimit': 6,
         'flightType': 'rt',
         'dataExpirationWindow': '50d'
        })
     }).then(response => {
       return response.json()
     }).then(json => {
-      console.log(json)
       this.setState({
         fares: json.ua
       });
-      console.log(this.state)
     }).catch(err => {
       console.log(err)
     })
   }
 
   componentWillMount(props) {
-    this.loadFares(this.props.baseUrl);
+    this.loadFares(this.props.sputnikUrl);
   }
   
   render() {
     return (
-    <div className="container">
       <div className="row">
         <Fare listOfFares={this.state.fares} callToAction={this.props.callToAction} />
       </div>
-    </div>
     );
   }
 }

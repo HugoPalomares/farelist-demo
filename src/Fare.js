@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Fare = ({listOfFares, callToAction}) => {
 
-  let uniqueFare = listOfFares.map((route) => {
+  let uniqueFare = listOfFares.map((route, i) => {
     return (
-      <div className="col s12 m6">
+      <div className="col s12 m6" key={i}>
         <div className="card">
           <div className="card-content">
             <span className="card-title">
