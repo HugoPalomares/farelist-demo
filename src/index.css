@@ -4,3 +4,14 @@ body {
   font-family: sans-serif;
   background:#f5f2f0;
 }
+
+.height-restriction {
+  max-height:500px;
+}
+
+.carousel-item-image {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
