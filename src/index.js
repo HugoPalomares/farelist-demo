@@ -7,7 +7,12 @@ import Breadcrumbs from './Breadcrumbs';
 import TrfxJson from './TrfxJson';
 
 let sputnikUrl = 'https://openair.airtrfx.com/airfare-sputnik/fares';
-let imageUrl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAMEc_KX9jscJa13Fdz26CfkIXyP46qhm8&cx=004489468580473566222:envuwm11ml4&searchType=image&q=mia"
+// hugo@ credentials
+// let imageUrl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAMEc_KX9jscJa13Fdz26CfkIXyP46qhm8&cx=004489468580473566222:envuwm11ml4&searchType=image&q="
+// hugo.palomaresm@ credentials
+// let imageUrl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAtOz4q8Nj-eI7NVv6BljnJS3Hv8GTPo5M&cx=006258174802938561027:lfdhmqvkz7q&searchType=image&q="
+// Default
+let imageUrl = "http://via.placeholder.com/1500x1500"
 
 class Layout extends Component {  
   render() {

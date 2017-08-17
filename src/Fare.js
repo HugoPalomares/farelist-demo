@@ -5,7 +5,7 @@ const Fare = ({listOfFares, callToAction}) => {
   let uniqueFare = listOfFares.map((route, i) => {
     return (
       <div className="col s12 m6" key={i}>
-        <div className="card">
+        <div className="card hoverable">
           <div className="card-content">
             <span className="card-title">
               {route.origin} to {route.destination} from ${route.fares[0].totalPrice}
